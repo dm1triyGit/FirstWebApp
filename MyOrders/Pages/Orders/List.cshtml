@@ -1,0 +1,67 @@
+﻿@page
+@model MyOrders.Pages.Orders.ListModel
+
+@{
+    ViewData["Title"] = "Список заказов";
+}
+
+<h2>Список заказов</h2>
+
+<p>
+    <a asp-page="/Index">Новый заказ</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CitySender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].AddressSender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CityRecipient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].AddressRecipient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CargoWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].DateReceipt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CitySender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressSender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityRecipient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressRecipient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CargoWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateReceipt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

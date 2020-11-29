@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<h1>Текущий заказ</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Order.CitySender" class="control-label"></label>
+                <input asp-for="Order.CitySender" class="form-control" />
+                <span asp-validation-for="Order.CitySender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.AddressSender" class="control-label"></label>
+                <input asp-for="Order.AddressSender" class="form-control" />
+                <span asp-validation-for="Order.AddressSender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.CityRecipient" class="control-label"></label>
+                <input asp-for="Order.CityRecipient" class="form-control" />
+                <span asp-validation-for="Order.CityRecipient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.AddressRecipient" class="control-label"></label>
+                <input asp-for="Order.AddressRecipient" class="form-control" />
+                <span asp-validation-for="Order.AddressRecipient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.CargoWeight" class="control-label"></label>
+                <input asp-for="Order.CargoWeight" class="form-control" />
+                <span asp-validation-for="Order.CargoWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.DateReceipt" class="control-label"></label>
+                <input asp-for="Order.DateReceipt" class="form-control" />
+                <span asp-validation-for="Order.DateReceipt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
