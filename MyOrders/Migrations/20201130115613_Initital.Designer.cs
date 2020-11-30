@@ -10,8 +10,8 @@ using MyOrders.Data;
 namespace MyOrders.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201127140016_InitialCreate3")]
-    partial class InitialCreate3
+    [Migration("20201130115613_Initital")]
+    partial class Initital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
